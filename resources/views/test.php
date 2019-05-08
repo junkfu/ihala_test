@@ -19,7 +19,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/components/cust_list.js"></script>
 
-    <title>iHala客戶列表</title>
+    <title>iHala客戶列表1</title>
     <!--<meta name="csrf-token" content="{{ csrf_token() }}">-->
 </head>
 <style>
