@@ -199,7 +199,7 @@ class Customers extends Controller{
                     'Content'=>$icryo_content
                 );
 
-                var_export($to_icryo_data);
+                //var_export($to_icryo_data);
 
                 $icryo_res = IcryoHelper::insert($to_icryo_data);
                 $msg = $icryo_res->message;
