@@ -49440,9 +49440,6 @@ Vue.component('cust_list', {
     };
   },
   mounted: function mounted() {
-    //this.selected;
-    //alert('1234');
-    //console.log('999');
     this.getUsersPages();
     this.getUsersByPage(1); //this.getReplyedList();
     //this.getConsultants();		
@@ -49548,23 +49545,22 @@ Vue.component('cust_list', {
     updateUserData: function updateUserData(data) {
       var _this5 = this;
 
-      var params = new URLSearchParams();
-      console.log('edit..');
-      console.log(data); //params.append('ichk', this.$refs.csrf.value);
+      var params = new URLSearchParams(); //console.log('edit..');
+      //console.log(data);
+      //params.append('ichk', this.$refs.csrf.value);
 
       params.append('s_id', data.s_id);
       params.append('comm_id', data.comm_id);
-      params.append('obj_id', data.obj_id);
       params.append('c_id', data.c_id);
       params.append('cNumber', data.cNumber);
       params.append('name', data.name);
       params.append('origin_name', data.origin_name);
-      params.append('sex', data.sex);
+      params.append('gender', data.gender);
       params.append('birth', data.birth);
       params.append('phone', data.phone);
       params.append('email', data.email);
-      params.append('about', data.about);
-      params.append('treatment', data.treatment); //console.log(data.consultant);
+      params.append('about', data.about); //params.append('treatment', data.treatment);    
+      //console.log(data.consultant);
 
       axios({
         method: 'post',
@@ -49653,8 +49649,8 @@ Vue.component('cust_list', {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Fu\project\iHala\code\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Fu\project\iHala\code\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Fu\project\iHala\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Fu\project\iHala\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -21,11 +21,8 @@ Vue.component('cust_list', {
     },
     mounted: function(){
 		
-        //this.selected;
-        //alert('1234');
-        //console.log('999');
         this.getUsersPages();
-        this.getUsersByPage(1);   
+        this.getUsersByPage(1);
         //this.getReplyedList();
 		//this.getConsultants();		
 
@@ -135,23 +132,22 @@ Vue.component('cust_list', {
         updateUserData: function(data){
             
             let params = new URLSearchParams();
-            console.log('edit..');
-            console.log(data);
+            //console.log('edit..');
+            //console.log(data);
  
             //params.append('ichk', this.$refs.csrf.value);
             params.append('s_id', data.s_id);
             params.append('comm_id', data.comm_id);
-            params.append('obj_id', data.obj_id);
             params.append('c_id', data.c_id);
             params.append('cNumber', data.cNumber);
             params.append('name', data.name);
             params.append('origin_name', data.origin_name);
-            params.append('sex', data.sex);
+            params.append('gender', data.gender);
             params.append('birth', data.birth);
             params.append('phone', data.phone);
             params.append('email', data.email);
             params.append('about', data.about);
-            params.append('treatment', data.treatment);    
+            //params.append('treatment', data.treatment);    
 			//console.log(data.consultant);
             axios({
                 method: 'post',

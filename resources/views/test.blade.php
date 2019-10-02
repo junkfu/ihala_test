@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -19,9 +20,10 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/components/cust_list.js"></script>
 
-    <title>iHala客戶列表1</title>
+    <title>iHala客戶列表</title>
     <!--<meta name="csrf-token" content="{{ csrf_token() }}">-->
 </head>
+@include('components.header')
 <style>
 ol,
 ul {
@@ -54,7 +56,7 @@ ul {
                                 <form>
                                     
                                     <!--<input ref="csrf" type="hidden" name="ci_csrf_token" value="">-->
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input ref="csrf" type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input  type="hidden" class="form-control" id="attending_date" :value="modal.attending_date" v-model="modal.attending_date">
 									<div class="form-group col-md-12">
                                         <label for="user_name">姓名:</label>
@@ -171,40 +173,41 @@ ul {
                                             <a class="btn btn-danger" @click="">
                                                 <i class="fa fa-sign-in" aria-hidden="true"></i>
                                             </a>
+                                            <!--
                                             <a class="btn btn-danger" @click="deleteUserData(user)">
                                                 <em class="fa fa-trash"></em>
                                             </a>
+                                            -->
                                         </td>
-                                        <td>{{user.name}}</td>
+                                        <td>@{{user.name}}</td>
                                         <td>
                                             <ol>
-                                                <li>Super8 id： {{user.s_id}}</li>
-												<li>Object id：{{user.obj_id}}</li>
-                                                <li>CRM id：{{user.c_id}}</li>
-                                                <li>通訊軟體id：{{user.comm_id}}</li>
+                                                <li>Super8 id： @{{user.s_id}}</li>
+                                                <li>CRM id：@{{user.c_id}}</li>
+                                                <li>通訊軟體id：@{{user.comm_id}}</li>
                                             </ol>                                            
                                         </td>
                                               
                                         <td>
                                             <ol>
-                                                <li><em class="fa fa-phone">: {{user.phone}}</li>
-                                                <li><em class="fa fa-envelope">：{{user.email}}</li>
-                                                <li>顯示名稱: {{user.origin_name}}</li>
-                                                <li>姓別：{{user.sex}}</li>
-                                                <li>生日：{{user.birth}}</li>
+                                                <li><em class="fa fa-phone">: @{{user.phone}}</li>
+                                                <li><em class="fa fa-envelope">：@{{user.email}}</li>
+                                                <li>顯示名稱: @{{user.origin_name}}</li>
+                                                <li>姓別：@{{user.sex}}</li>
+                                                <li>生日：@{{user.birth}}</li>
                                             </ol>
                                         </td>
                                         <td>
                                             <ol>
-                                                <li>病歷號：{{user.cNumber}}</li>
-                                                <li>療程：{{user.treatment}}</li>
+                                                <li>病歷號：@{{user.cNumber}}</li>
+                                                <li>療程：@{{user.treatment}}</li>
                                             </ol>
                                         </td>
-                                        <td>{{user.about}}</td>
+                                        <td>@{{user.about}}</td>
 										<td>
                                             <ol>
-                                                <li>建立時間：{{user.create_time}}</li>
-                                                <li>更新時間：{{user.update_time}}</li>
+                                                <li>建立時間：@{{user.create_time}}</li>
+                                                <li>更新時間：@{{user.update_time}}</li>
                                             </ol>
                                         </td>
                                     </tr>
@@ -215,7 +218,7 @@ ul {
                         <div class="panel-footer">
                             <div class="row">
                                 <div class="col col-xs-4">
-                                    <p>Page {{current_page}} of {{pages}}</p>
+                                    <p>Page @{{current_page}} of @{{pages}}</p>
                                 </div>
                         
                                 <div class="col col-xs-8">
@@ -227,7 +230,7 @@ ul {
                                             </a>
                                         </li>
                                         <li v-if="pages !== 0" v-for="page in 10" :class="{active: page_start + page === current_page ? true: false}">
-                                            <a v-if="page_start + page <= pages" class="btn" @click="getUsersByPage(page_start + page)">{{ page_start + page }}</a>
+                                            <a v-if="page_start + page <= pages" class="btn" @click="getUsersByPage(page_start + page)">@{{ page_start + page }}</a>
                                         </li>        
                                         <li class="page-item">
                                             <a v-if="current_page < pages" class="page-link" aria-label="Next" @click="current_page = current_page + 1">

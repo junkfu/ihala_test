@@ -20,5 +20,19 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        //'http://192.168.20.62:26001/customers/page/*',
+        'http://192.168.20.62:26001/customers/insertBySuper8',
+        'http://192.168.20.62:26001/customers/updateBySuper8',
+        'http://192.168.20.62:26001/customers/insertCrm',
+        'http://192.168.20.62:26001/customers/addCrm',
+        'http://192.168.20.62:26001/customers/test',
+        'http://192.168.20.62:26001/customers/test2',
+        'http://192.168.20.62:26001/action/updateCrmByEmployee',
+        //'http://192.168.1.186:26001/customers/page/*',
+        'http://192.168.1.186:26001/customers/insertBySuper8',
+        'http://192.168.1.186:26001/customers/updateBySuper8',
+        'http://192.168.1.186:26001/customers/insertCrm',
+        'http://192.168.1.186:26001/customers/addCrm',
+        'http://192.168.1.186:26001/customers/test2',
     ];
 }

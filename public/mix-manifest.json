@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/components/action_list.js": "/js/components/action_list.js",
     "/js/components/cust_list.js": "/js/components/cust_list.js"
 }
